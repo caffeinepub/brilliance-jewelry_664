@@ -152,32 +152,40 @@ export default function Header() {
 
       {/* Main header */}
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo — full vertical on desktop, compact horizontal on mobile */}
+        {/* Logo — transparent background, works on dark charcoal header */}
         <button
           onClick={() => navigate({ to: "/" })}
           className="flex items-center flex-shrink-0"
           aria-label="LOBODA Jewelry — Home"
         >
-          {/* Full vertical logo: visible on md+ screens */}
+          {/* Full logo: visible on md+ screens — transparent background */}
           <img
-            src="/assets/generated/loboda-logo.dim_600x700.png"
+            src="/assets/generated/loboda-logo.dim_400x400.png"
             alt="LOBODA Jewelry"
             className="hidden md:block h-16 w-auto object-contain"
             onError={(e) => {
-              (e.currentTarget as HTMLImageElement).style.display = "none";
+              const target = e.currentTarget as HTMLImageElement;
+              // Try the original logo as fallback
+              target.src = "/assets/generated/loboda-logo.dim_600x700.png";
+              target.onerror = () => {
+                target.style.display = "none";
+              };
             }}
           />
-          {/* Compact horizontal logo: visible on small screens */}
+          {/* Compact logo: visible on small screens — transparent background */}
           <img
-            src="/assets/generated/loboda-logo-icon.dim_300x120.png"
+            src="/assets/generated/loboda-logo-icon.dim_256x256.png"
             alt="LOBODA Jewelry"
             className="block md:hidden h-10 w-auto object-contain"
             onError={(e) => {
               const target = e.currentTarget as HTMLImageElement;
-              target.style.display = "none";
-              // Fallback text
-              const fallback = target.nextElementSibling as HTMLElement;
-              if (fallback) fallback.style.display = "flex";
+              // Try the original icon as fallback
+              target.src = "/assets/generated/loboda-logo-icon.dim_300x120.png";
+              target.onerror = () => {
+                target.style.display = "none";
+                const fallback = target.nextElementSibling as HTMLElement;
+                if (fallback) fallback.style.display = "flex";
+              };
             }}
           />
           {/* Text fallback (hidden by default) */}

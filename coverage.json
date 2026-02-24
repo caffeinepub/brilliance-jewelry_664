@@ -1,41 +1,26 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-24T22:59:16.743Z",
+  "generatedAt": "2026-02-24T23:11:34.230Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 1,
+    "implemented": 1,
     "items": [
       {
-        "id": "REQ-6",
-        "summary": "Replace the existing logo asset at frontend/public/assets/generated/loboda-logo.png with the newly uploaded full vertical logo (gold swan emblem above 'LOBODA JEWELRY' lettering in gold). This logo should be used in the Header and Footer components wherever the primary site logo appears.",
+        "id": "REQ-8",
+        "summary": "Replace the existing logo assets at frontend/public/assets/generated/loboda-logo.png and frontend/public/assets/generated/loboda-logo-icon.png with transparent-background versions of the same designs. All Header, Footer, and other components currently referencing these files should continue to use the same filenames — no component code changes required unless background artifacts become visible against dark or light surfaces.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/assets/generated/loboda-logo.dim_600x700.png",
-          "frontend/src/components/Header.tsx",
-          "frontend/src/components/Footer.tsx"
+          "frontend/public/assets/generated/loboda-logo.dim_400x400.png",
+          "frontend/public/assets/generated/loboda-logo-icon.dim_256x256.png"
         ],
         "matchedFiles": [
-          "frontend/public/assets/generated/loboda-logo.dim_600x700.png",
-          "frontend/src/components/Header.tsx",
-          "frontend/src/components/Footer.tsx"
-        ]
-      },
-      {
-        "id": "REQ-7",
-        "summary": "Store a compact horizontal or stacked variant of the LOBODA Jewelry logo (gold swan icon + 'LOBODA JEWELRY' text) as a separate static asset at frontend/public/assets/generated/loboda-logo-icon.png for use in smaller contexts such as the mobile menu, favicon, or footer compact display.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/public/assets/generated/loboda-logo-icon.dim_300x120.png",
-          "frontend/src/components/Header.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/public/assets/generated/loboda-logo-icon.dim_300x120.png",
-          "frontend/src/components/Header.tsx"
+          "frontend/public/assets/generated/loboda-logo.dim_400x400.png",
+          "frontend/public/assets/generated/loboda-logo-icon.dim_256x256.png"
         ]
       }
     ]
@@ -45,8 +30,8 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/assets/generated/loboda-logo-icon.dim_300x120.png",
-    "frontend/public/assets/generated/loboda-logo.dim_600x700.png",
+    "frontend/public/assets/generated/loboda-logo-icon.dim_256x256.png",
+    "frontend/public/assets/generated/loboda-logo.dim_400x400.png",
     "frontend/src/components/Footer.tsx",
     "frontend/src/components/Header.tsx",
     "project_state.json",

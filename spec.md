@@ -1,12 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Replace the site logo assets with the new LOBODA Jewelry brand identity (gold swan emblem + wordmark) and update the Header and Footer components to display the new logos.
+**Goal:** Make the LOBODA Jewelry logo assets have transparent backgrounds so they display cleanly against the site's dark header and footer.
 
 **Planned changes:**
-- Save the new full vertical LOBODA Jewelry logo (gold swan emblem above "LOBODA JEWELRY" wordmark, transparent background) as `loboda-logo.png` under `frontend/public/assets/generated/`
-- Save a compact version of the logo (smaller stacked swan + wordmark, transparent background) as `loboda-logo-icon.png` under `frontend/public/assets/generated/`
-- Update the Header component to display the new full vertical logo, switching to the compact icon variant on mobile/small screens
-- Update the Footer component to display the new full vertical logo
+- Replace `loboda-logo.png` with a transparent-background version, preserving the gold swan emblem and "LOBODA JEWELRY" text exactly
+- Replace `loboda-logo-icon.png` with a transparent-background version, preserving the gold swan icon and text exactly
 
-**User-visible outcome:** The site header and footer show the updated LOBODA Jewelry gold swan logo on all screen sizes, with no transparency artifacts on any background.
+**User-visible outcome:** Both logos render without any background box or halo against the site's dark charcoal/black header and footer.

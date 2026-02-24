@@ -1,63 +1,43 @@
 {
   "kind": "build_request",
-  "title": "Update site logos with new LOBODA Jewelry brand assets",
+  "title": "Update LOBODA Jewelry logo to have a transparent background",
   "projectName": "LOBODA Jewelry",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-6",
-      "text": "Replace the existing logo asset at frontend/public/assets/generated/loboda-logo.png with the newly uploaded full vertical logo (gold swan emblem above 'LOBODA JEWELRY' lettering in gold). This logo should be used in the Header and Footer components wherever the primary site logo appears.",
+      "id": "REQ-8",
+      "text": "Replace the existing logo assets at frontend/public/assets/generated/loboda-logo.png and frontend/public/assets/generated/loboda-logo-icon.png with transparent-background versions of the same designs. All Header, Footer, and other components currently referencing these files should continue to use the same filenames — no component code changes required unless background artifacts become visible against dark or light surfaces.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-4"
         ],
         "quotes": [
-          "to be used as you see fit"
+          "edit loboda's logo, transparent background"
         ]
       },
       "acceptanceCriteria": [
-        "The Header component displays the new full vertical LOBODA Jewelry logo (gold swan + LOBODA JEWELRY wordmark)",
-        "The Footer component displays the same updated logo",
-        "The logo renders clearly on both dark (charcoal/black) and light (ivory) backgrounds",
-        "No visible artifacts or checkerboard transparency patterns appear around the logo on any background"
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "text": "Store a compact horizontal or stacked variant of the LOBODA Jewelry logo (gold swan icon + 'LOBODA JEWELRY' text) as a separate static asset at frontend/public/assets/generated/loboda-logo-icon.png for use in smaller contexts such as the mobile menu, favicon, or footer compact display.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "to be used as you see fit"
-        ]
-      },
-      "acceptanceCriteria": [
-        "A compact logo asset is stored at frontend/public/assets/generated/loboda-logo-icon.png",
-        "The compact logo is used appropriately in mobile or space-constrained header contexts",
-        "The compact logo remains legible and visually consistent with the brand palette"
+        "loboda-logo.png renders with a fully transparent background (no white, black, or colored fill behind the swan emblem and text).",
+        "loboda-logo-icon.png renders with a fully transparent background.",
+        "Both logos display correctly against the site's dark charcoal/black header and footer backgrounds without any visible background box or halo.",
+        "No layout or sizing regressions in Header or Footer components."
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui/",
-    "All image assets must be placed under frontend/public/assets/generated/",
-    "Do not alter the existing navigation structure, color palette, or typography settings"
+    "Keep the same filenames (loboda-logo.png and loboda-logo-icon.png) so no component references need to change.",
+    "Do not alter the visual design of the logos beyond removing the background."
   ],
   "nonGoals": [
-    "Redesigning the header or footer layout",
-    "Changing the navigation menu structure",
-    "Updating any backend logic or data models",
-    "Adding new pages or features"
+    "Redesigning or resizing the logos.",
+    "Changes to Header, Footer, or any other component code unless strictly necessary to fix background artifact visibility.",
+    "Adding new logo variants beyond the two existing assets."
   ],
   "imageRequirements": {
-    "required": [
-      "Gold swan emblem above 'LOBODA' in large gold serif letters and 'JEWELRY' in spaced gold sans-serif capitals, vertical stacked composition, transparent background, high-resolution luxury jewelry brand logo (loboda-logo.dim_600x700.png)",
-      "Compact gold swan emblem beside 'LOBODA JEWELRY' in gold letters on transparent background, horizontal layout suitable for small display sizes (loboda-logo-icon.dim_300x120.png)"
-    ],
-    "edits": []
+    "required": [],
+    "edits": [
+      "Remove background and make fully transparent, preserving gold swan emblem and 'LOBODA JEWELRY' text exactly (loboda-logo.png > loboda-logo.dim_400x400.png)",
+      "Remove background and make fully transparent, preserving gold swan icon and 'LOBODA JEWELRY' text exactly (loboda-logo-icon.png > loboda-logo-icon.dim_256x256.png)"
+    ]
   }
 }

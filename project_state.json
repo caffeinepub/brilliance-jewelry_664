@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 7,
   "summary": "LOBODA Jewelry — a dropshipping-based online jewelry store (no inventory stored). Branding updated to LOBODA Jewelry with a customized logo. Menus and categories to mirror miraljewelers.com. Site is pre-launch with placeholder products until final store opening.",
   "architectural_notes": [
     "Dropshipping vendor model — no products physically stored; site acts as storefront only",
@@ -10,7 +10,7 @@
     "Previous build encountered an internal configuration error and may need retry"
   ],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Gold swan emblem above 'LOBODA' in large gold serif letters and 'JEWELRY' in spaced gold sans-serif capitals, vertical stacked composition, transparent background, high-resolution luxury jewelry brand logo (loboda-logo.dim_600x700.png)\n- Compact gold swan emblem beside 'LOBODA JEWELRY' in gold letters on transparent background, horizontal layout suitable for small display sizes (loboda-logo-icon.dim_300x120.png)",
+  "imageRequirements": "## Edit Images\n- Remove background and make fully transparent, preserving gold swan emblem and 'LOBODA JEWELRY' text exactly (loboda-logo.png > loboda-logo.dim_400x400.png)\n- Remove background and make fully transparent, preserving gold swan icon and 'LOBODA JEWELRY' text exactly (loboda-logo-icon.png > loboda-logo-icon.dim_256x256.png)",
   "existing_features": [
     {
       "id": "feature-update-the-site-header-navigation-to-mirror-the-menu-structure-of-miraljewelers-com-implement-the-following-top-level-navigation-items-with-their-sub-categories-engagement-engagement-rings-wedding-bands-anniversary-rings-wedding-bridal-sets-wedding-bands-for-her-wedding-bands-for-him-jewelry-necklaces-earrings-bracelets-rings-pendants-gemstones-diamonds-sapphires-rubies-emeralds-other-gemstones-gifts-gifts-by-occasion-gifts-by-price-personalized-gifts-and-about-our-story-contact-us-each-top-level-item-should-show-a-dropdown-with-its-sub-categories-on-hover",
@@ -59,6 +59,14 @@
         "REQ-7"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-replace-the-existing-logo-assets-at-frontend-public-assets-generated-loboda-logo-png-and-frontend-public-assets-generated-loboda-logo-icon-png-with-transparent-background-versions-of-the-same-designs-all-header-footer-and-other-components-currently-referencing-these-files-should-continue-to-use-the-same-filenames-no-component-code-changes-required-unless-background-artifacts-become-visible-against-dark-or-light-surfaces",
+      "title": "Replace the existing logo assets at frontend/public/assets/generated/loboda-logo.png and frontend/public/assets/generated/loboda-logo-icon.png with transparent-background versions of the same designs. All Header, Footer, and other components currently referencing these files should continue to use the same filenames — no component code changes required unless background artifacts become visible against dark or light surfaces.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -86,6 +94,12 @@
       "reqIds": [
         "REQ-2"
       ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Update LOBODA Jewelry logo to have a transparent background",
+      "reqIds": [],
       "status": "pending"
     }
   ],

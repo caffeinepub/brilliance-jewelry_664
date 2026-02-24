@@ -53,16 +53,20 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <button onClick={() => navigate({ to: "/" })} className="block mb-5">
-              {/* Full vertical logo — renders naturally on charcoal background */}
+              {/* Transparent background logo — renders cleanly on charcoal background */}
               <img
-                src="/assets/generated/loboda-logo.dim_600x700.png"
+                src="/assets/generated/loboda-logo.dim_400x400.png"
                 alt="LOBODA Jewelry"
                 className="h-24 w-auto object-contain"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement;
-                  target.style.display = "none";
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = "block";
+                  // Try the original logo as fallback
+                  target.src = "/assets/generated/loboda-logo.dim_600x700.png";
+                  target.onerror = () => {
+                    target.style.display = "none";
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = "block";
+                  };
                 }}
               />
               <div style={{ display: "none" }}>

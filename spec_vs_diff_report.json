@@ -1,38 +1,29 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-24T22:59:16.739Z",
-  "summary": "The diff modifies Header.tsx and Footer.tsx to reference new logo assets with the `.dim_600x700.png` and `.dim_300x120.png` suffixes. The Footer uses `loboda-logo.dim_600x700.png` and the Header uses both `loboda-logo.dim_600x700.png` (desktop) and `loboda-logo-icon.dim_300x120.png` (mobile). However, the requirements specify the assets must be stored at `loboda-logo.png` and `loboda-logo-icon.png` respectively. No new image files are added in the diff. The compact logo is used in the mobile header context, which satisfies the usage AC for REQ-7.",
+  "generatedAt": "2026-02-24T23:11:34.226Z",
+  "summary": "The diff modifies Header.tsx and Footer.tsx to reference new transparent-background logo filenames (loboda-logo.dim_400x400.png and loboda-logo-icon.dim_256x256.png), but the actual PNG asset files at frontend/public/assets/generated/ do not appear to have been added or replaced in the diff. The component code changes reference the new filenames with fallback logic, but the binary image assets themselves are not shown as added or modified files.",
   "missing_requirements": [
     {
-      "id": "REQ-6",
-      "requirement": "Replace the existing logo asset at frontend/public/assets/generated/loboda-logo.png",
-      "reason": "No image file was added or replaced at frontend/public/assets/generated/loboda-logo.png. The diff shows no added files, and the components reference loboda-logo.dim_600x700.png instead of loboda-logo.png as specified in the requirements.",
+      "id": "REQ-8",
+      "requirement": "Replace the existing logo assets at frontend/public/assets/generated/loboda-logo.png and frontend/public/assets/generated/loboda-logo-icon.png with transparent-background versions of the same designs.",
+      "reason": "The diff shows no added or modified PNG files under frontend/public/assets/generated/. The actual transparent-background image assets (loboda-logo.dim_400x400.png and loboda-logo-icon.dim_256x256.png) are not present in the diff as new files. Only component code referencing these filenames was changed.",
       "evidence": [
         "frontend/src/components/Header.tsx",
         "frontend/src/components/Footer.tsx"
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "requirement": "Store a compact logo asset at frontend/public/assets/generated/loboda-logo-icon.png",
-      "reason": "No image file was added at frontend/public/assets/generated/loboda-logo-icon.png. The diff shows no added files, and the Header references loboda-logo-icon.dim_300x120.png instead of loboda-logo-icon.png as specified in the requirements.",
-      "evidence": [
-        "frontend/src/components/Header.tsx"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "Logo assets are referenced with dimension suffixes (.dim_600x700.png and .dim_300x120.png) rather than the canonical filenames specified in the requirements (loboda-logo.png and loboda-logo-icon.png)",
-      "reason": "The build request specifies asset paths as loboda-logo.png and loboda-logo-icon.png, but the implementation uses loboda-logo.dim_600x700.png and loboda-logo-icon.dim_300x120.png, a naming convention not requested.",
+      "description": "Footer.tsx references loboda-logo.dim_600x700.png as a secondary fallback when the primary transparent logo fails, which was not requested.",
+      "reason": "The build request only mentions two logo assets (loboda-logo.png / loboda-logo.dim_400x400.png and loboda-logo-icon.png / loboda-logo-icon.dim_256x256.png). A fallback to loboda-logo.dim_600x700.png is an extra variant not mentioned anywhere in the requirements.",
       "evidence": [
-        "frontend/src/components/Header.tsx",
         "frontend/src/components/Footer.tsx"
       ]
     }
   ],
-  "confidence": 0.85,
+  "confidence": 0.82,
   "changed_files": [
     "frontend-file-summaries.txt",
     "frontend/src/components/Footer.tsx",
