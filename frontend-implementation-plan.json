@@ -1,0 +1,55 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Update site logos with new LOBODA Jewelry brand assets",
+  "requirements": [
+    {
+      "id": "REQ-6",
+      "summary": "Replace existing logo with new full vertical LOBODA Jewelry logo in Header and Footer components",
+      "acceptanceCriteria": [
+        "The Header component displays the new full vertical LOBODA Jewelry logo (gold swan + LOBODA JEWELRY wordmark)",
+        "The Footer component displays the same updated logo",
+        "The logo renders clearly on both dark (charcoal/black) and light (ivory) backgrounds",
+        "No visible artifacts or checkerboard transparency patterns appear around the logo on any background"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/loboda-logo.dim_600x700.png",
+          "operation": "create",
+          "description": "Store the newly generated full vertical LOBODA Jewelry logo (gold swan emblem above 'LOBODA JEWELRY' lettering) as the primary brand asset. This image will be referenced by the Header and Footer components to display the main site logo on both light and dark backgrounds."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Update the logo image reference to use the new asset at frontend/public/assets/generated/loboda-logo.dim_600x700.png. Ensure the logo renders clearly at appropriate sizes for desktop and mobile viewports, and that the transparent background blends seamlessly with the header's charcoal/ivory color schemes. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Update the footer logo image reference to use the new asset at frontend/public/assets/generated/loboda-logo.dim_600x700.png. Ensure the vertical logo layout is displayed appropriately within the footer's brand section and renders clearly against the footer background color. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add compact horizontal logo variant for mobile menu and space-constrained contexts",
+      "acceptanceCriteria": [
+        "A compact logo asset is stored at frontend/public/assets/generated/loboda-logo-icon.png",
+        "The compact logo is used appropriately in mobile or space-constrained header contexts",
+        "The compact logo remains legible and visually consistent with the brand palette"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/loboda-logo-icon.dim_300x120.png",
+          "operation": "create",
+          "description": "Store the compact horizontal LOBODA Jewelry logo (gold swan icon beside 'LOBODA JEWELRY' text) as a secondary brand asset for use in mobile menu, favicon, or other space-constrained display contexts where the full vertical logo would be too large."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Integrate the compact logo asset at frontend/public/assets/generated/loboda-logo-icon.dim_300x120.png for display in mobile viewports or when horizontal space is constrained. Use responsive image techniques to switch between the full vertical logo and compact horizontal variant based on screen size. Ensure legibility and visual consistency with the gold brand palette. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

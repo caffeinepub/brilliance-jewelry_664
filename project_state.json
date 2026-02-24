@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "LOBODA Jewelry — a dropshipping-based online jewelry store (no inventory stored). Branding updated to LOBODA Jewelry with a customized logo. Menus and categories to mirror miraljewelers.com. Site is pre-launch with placeholder products until final store opening.",
+  "architectural_notes": [
+    "Dropshipping vendor model — no products physically stored; site acts as storefront only",
+    "Pre-launch state: placeholder products until final store opening"
+  ],
+  "known_issues": [
+    "Previous build encountered an internal configuration error and may need retry"
+  ],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Gold swan emblem above 'LOBODA' in large gold serif letters and 'JEWELRY' in spaced gold sans-serif capitals, vertical stacked composition, transparent background, high-resolution luxury jewelry brand logo (loboda-logo.dim_600x700.png)\n- Compact gold swan emblem beside 'LOBODA JEWELRY' in gold letters on transparent background, horizontal layout suitable for small display sizes (loboda-logo-icon.dim_300x120.png)",
+  "existing_features": [
+    {
+      "id": "feature-update-the-site-header-navigation-to-mirror-the-menu-structure-of-miraljewelers-com-implement-the-following-top-level-navigation-items-with-their-sub-categories-engagement-engagement-rings-wedding-bands-anniversary-rings-wedding-bridal-sets-wedding-bands-for-her-wedding-bands-for-him-jewelry-necklaces-earrings-bracelets-rings-pendants-gemstones-diamonds-sapphires-rubies-emeralds-other-gemstones-gifts-gifts-by-occasion-gifts-by-price-personalized-gifts-and-about-our-story-contact-us-each-top-level-item-should-show-a-dropdown-with-its-sub-categories-on-hover",
+      "title": "Update the site header navigation to mirror the menu structure of miraljewelers.com. Implement the following top-level navigation items with their sub-categories: 'Engagement' (Engagement Rings, Wedding Bands, Anniversary Rings), 'Wedding' (Bridal Sets, Wedding Bands for Her, Wedding Bands for Him), 'Jewelry' (Necklaces, Earrings, Bracelets, Rings, Pendants), 'Gemstones' (Diamonds, Sapphires, Rubies, Emeralds, Other Gemstones), 'Gifts' (Gifts by Occasion, Gifts by Price, Personalized Gifts), and 'About' (Our Story, Contact Us). Each top-level item should show a dropdown with its sub-categories on hover.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-site-logo-in-the-header-and-footer-with-the-uploaded-loboda-jewelry-logo-lyolalogobwhck-png-a-gold-swan-emblem-beside-loboda-jewelry-in-bold-serif-sans-text-store-the-logo-as-a-static-asset-at-frontend-public-assets-generated-loboda-logo-png-and-reference-it-from-the-header-and-footer-components-ensure-the-site-name-displayed-in-the-browser-tab-title-and-any-text-references-is-loboda-jewelry",
+      "title": "Replace the current site logo in the header and footer with the uploaded LOBODA Jewelry logo (LYOLALOGObwhck.png — a gold swan emblem beside 'LOBODA JEWELRY' in bold serif/sans text). Store the logo as a static asset at frontend/public/assets/generated/loboda-logo.png and reference it from the Header and Footer components. Ensure the site name displayed in the browser tab title and any text references is 'LOBODA Jewelry'.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-marketplace-hero-section-and-category-grid-to-use-the-new-miraljewelers-com-style-category-structure-display-category-cards-for-the-main-jewelry-categories-engagement-rings-wedding-bands-necklaces-earrings-bracelets-rings-with-elegant-placeholder-imagery-include-a-clear-coming-soon-or-opening-soon-indicator-on-product-cards-and-category-pages-to-communicate-the-pre-launch-state-to-visitors",
+      "title": "Update the Marketplace hero section and category grid to use the new miraljewelers.com-style category structure. Display category cards for the main jewelry categories (Engagement Rings, Wedding Bands, Necklaces, Earrings, Bracelets, Rings) with elegant placeholder imagery. Include a clear 'Coming Soon' or 'Opening Soon' indicator on product cards and category pages to communicate the pre-launch state to visitors.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-luxury-jewelry-visual-theme-throughout-the-site-consistent-with-the-loboda-jewelry-brand-and-gold-swan-logo-use-a-color-palette-of-deep-black-charcoal-off-white-ivory-and-gold-accents-c9a84c-or-similar-typography-should-use-elegant-serif-fonts-for-headings-and-clean-sans-serif-for-body-text-ensure-the-theme-is-applied-consistently-across-the-header-footer-marketplace-about-us-and-contact-us-pages",
+      "title": "Apply a luxury jewelry visual theme throughout the site consistent with the LOBODA Jewelry brand and gold swan logo. Use a color palette of deep black/charcoal, off-white/ivory, and gold accents (#C9A84C or similar). Typography should use elegant serif fonts for headings and clean sans-serif for body text. Ensure the theme is applied consistently across the Header, Footer, Marketplace, About Us, and Contact Us pages.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-existing-logo-asset-at-frontend-public-assets-generated-loboda-logo-png-with-the-newly-uploaded-full-vertical-logo-gold-swan-emblem-above-loboda-jewelry-lettering-in-gold-this-logo-should-be-used-in-the-header-and-footer-components-wherever-the-primary-site-logo-appears",
+      "title": "Replace the existing logo asset at frontend/public/assets/generated/loboda-logo.png with the newly uploaded full vertical logo (gold swan emblem above 'LOBODA JEWELRY' lettering in gold). This logo should be used in the Header and Footer components wherever the primary site logo appears.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-store-a-compact-horizontal-or-stacked-variant-of-the-loboda-jewelry-logo-gold-swan-icon-loboda-jewelry-text-as-a-separate-static-asset-at-frontend-public-assets-generated-loboda-logo-icon-png-for-use-in-smaller-contexts-such-as-the-mobile-menu-favicon-or-footer-compact-display",
+      "title": "Store a compact horizontal or stacked variant of the LOBODA Jewelry logo (gold swan icon + 'LOBODA JEWELRY' text) as a separate static asset at frontend/public/assets/generated/loboda-logo-icon.png for use in smaller contexts such as the mobile menu, favicon, or footer compact display.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Update branding: logo and store name to LOBODA Jewelry",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Mirror menus and categories from miraljewelers.com",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Dropshipping model: no inventory stored on site; compliance and data precautions in place",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Update the backend categories to match the miraljewelers.com structure. Seed or replace existing categories with: Engagement Rings, Wedding Bands, Bridal Sets, Necklaces, Earrings, Bracelets, Rings, Pendants, Diamonds, Sapphires, Rubies, Emeralds, Other Gemstones, Personalized Gifts. No real products should be added — categories should exist as placeholders for the pre-launch state.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "LOBODA Jewelry",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

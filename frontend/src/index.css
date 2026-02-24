@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* LOBODA Luxury Jewelry Palette - OKLCH */
+    --background: oklch(0.98 0.005 85);
+    --foreground: oklch(0.12 0.01 60);
+
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.12 0.01 60);
+
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.12 0.01 60);
+
+    /* Gold primary */
+    --primary: oklch(0.72 0.12 75);
+    --primary-foreground: oklch(0.12 0.01 60);
+
+    /* Charcoal secondary */
+    --secondary: oklch(0.18 0.01 60);
+    --secondary-foreground: oklch(0.95 0.005 85);
+
+    --muted: oklch(0.94 0.005 85);
+    --muted-foreground: oklch(0.45 0.01 60);
+
+    --accent: oklch(0.72 0.12 75);
+    --accent-foreground: oklch(0.12 0.01 60);
+
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(0.98 0 0);
+
+    --border: oklch(0.88 0.005 85);
+    --input: oklch(0.88 0.005 85);
+    --ring: oklch(0.72 0.12 75);
+
+    --radius: 0.25rem;
+
+    /* Custom tokens */
+    --gold: oklch(0.72 0.12 75);
+    --gold-light: oklch(0.82 0.10 80);
+    --gold-dark: oklch(0.58 0.14 70);
+    --charcoal: oklch(0.18 0.01 60);
+    --charcoal-mid: oklch(0.28 0.01 60);
+    --ivory: oklch(0.97 0.008 85);
+    --ivory-dark: oklch(0.92 0.008 85);
+  }
+
+  .dark {
+    --background: oklch(0.12 0.01 60);
+    --foreground: oklch(0.95 0.005 85);
+
+    --card: oklch(0.18 0.01 60);
+    --card-foreground: oklch(0.95 0.005 85);
+
+    --popover: oklch(0.18 0.01 60);
+    --popover-foreground: oklch(0.95 0.005 85);
+
+    --primary: oklch(0.72 0.12 75);
+    --primary-foreground: oklch(0.12 0.01 60);
+
+    --secondary: oklch(0.28 0.01 60);
+    --secondary-foreground: oklch(0.95 0.005 85);
+
+    --muted: oklch(0.22 0.01 60);
+    --muted-foreground: oklch(0.65 0.01 60);
+
+    --accent: oklch(0.72 0.12 75);
+    --accent-foreground: oklch(0.12 0.01 60);
+
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(0.98 0 0);
+
+    --border: oklch(0.28 0.01 60);
+    --input: oklch(0.28 0.01 60);
+    --ring: oklch(0.72 0.12 75);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  .nav-dropdown {
+    @apply absolute top-full left-0 bg-white shadow-xl border-t-2 border-gold min-w-[220px] z-50 opacity-0 invisible translate-y-2 transition-all duration-200;
+  }
+
+  .nav-item:hover .nav-dropdown {
+    @apply opacity-100 visible translate-y-0;
+  }
+
+  .gold-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-gold to-transparent;
+  }
+
+  .luxury-btn {
+    @apply bg-gold text-charcoal font-medium tracking-widest uppercase text-xs px-8 py-3 hover:bg-gold-dark transition-colors duration-200;
+  }
+
+  .luxury-btn-outline {
+    @apply border border-gold text-gold font-medium tracking-widest uppercase text-xs px-8 py-3 hover:bg-gold hover:text-charcoal transition-colors duration-200;
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-replace-the-existing-logo-asset-at-frontend-public-assets-generated-loboda-logo-png-with-the-newly-uploaded-full-vertical-logo-gold-swan-emblem-above-loboda-jewelry-lettering-in-gold-this-logo-should-be-used-in-the-header-and-footer-components-wherever-the-primary-site-logo-appears",
+      "featureTitle": "Replace the existing logo asset at frontend/public/assets/generated/loboda-logo.png with the newly uploaded full vertical logo (gold swan emblem above 'LOBODA JEWELRY' lettering in gold). This logo should be used in the Header and Footer components wherever the primary site logo appears.",
+      "files": [
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/Header.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "build-template-react@1.0.0",
+        "shadcn-ui@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-store-a-compact-horizontal-or-stacked-variant-of-the-loboda-jewelry-logo-gold-swan-icon-loboda-jewelry-text-as-a-separate-static-asset-at-frontend-public-assets-generated-loboda-logo-icon-png-for-use-in-smaller-contexts-such-as-the-mobile-menu-favicon-or-footer-compact-display",
+      "featureTitle": "Store a compact horizontal or stacked variant of the LOBODA Jewelry logo (gold swan icon + 'LOBODA JEWELRY' text) as a separate static asset at frontend/public/assets/generated/loboda-logo-icon.png for use in smaller contexts such as the mobile menu, favicon, or footer compact display.",
+      "files": [
+        "frontend/src/components/Header.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "build-template-react@1.0.0",
+        "shadcn-ui@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

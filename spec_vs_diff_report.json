@@ -1,0 +1,42 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-24T22:59:16.739Z",
+  "summary": "The diff modifies Header.tsx and Footer.tsx to reference new logo assets with the `.dim_600x700.png` and `.dim_300x120.png` suffixes. The Footer uses `loboda-logo.dim_600x700.png` and the Header uses both `loboda-logo.dim_600x700.png` (desktop) and `loboda-logo-icon.dim_300x120.png` (mobile). However, the requirements specify the assets must be stored at `loboda-logo.png` and `loboda-logo-icon.png` respectively. No new image files are added in the diff. The compact logo is used in the mobile header context, which satisfies the usage AC for REQ-7.",
+  "missing_requirements": [
+    {
+      "id": "REQ-6",
+      "requirement": "Replace the existing logo asset at frontend/public/assets/generated/loboda-logo.png",
+      "reason": "No image file was added or replaced at frontend/public/assets/generated/loboda-logo.png. The diff shows no added files, and the components reference loboda-logo.dim_600x700.png instead of loboda-logo.png as specified in the requirements.",
+      "evidence": [
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/Footer.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "Store a compact logo asset at frontend/public/assets/generated/loboda-logo-icon.png",
+      "reason": "No image file was added at frontend/public/assets/generated/loboda-logo-icon.png. The diff shows no added files, and the Header references loboda-logo-icon.dim_300x120.png instead of loboda-logo-icon.png as specified in the requirements.",
+      "evidence": [
+        "frontend/src/components/Header.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Logo assets are referenced with dimension suffixes (.dim_600x700.png and .dim_300x120.png) rather than the canonical filenames specified in the requirements (loboda-logo.png and loboda-logo-icon.png)",
+      "reason": "The build request specifies asset paths as loboda-logo.png and loboda-logo-icon.png, but the implementation uses loboda-logo.dim_600x700.png and loboda-logo-icon.dim_300x120.png, a naming convention not requested.",
+      "evidence": [
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/Footer.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.85,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Header.tsx",
+    "project_state.json"
+  ]
+}
